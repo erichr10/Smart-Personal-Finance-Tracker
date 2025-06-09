@@ -116,7 +116,7 @@ app.post('/api/budgets', async (req, res) => {
 
 // Static file serving in production
 if (process.env.NODE_ENV === 'production') {
-  const distPath = path.join(__dirname, '../Frontend/dist');
+  const distPath = path.join(__dirname, '../dist'); // since it's now copied into Backend
 
   if (fs.existsSync(distPath)) {
     console.log('Serving frontend from:', distPath);
