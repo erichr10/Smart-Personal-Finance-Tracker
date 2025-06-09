@@ -4,7 +4,7 @@ A full-stack personal finance tracking app designed to help users stay on top of
 
 ---
 
-## 🔮 Features
+## 🔮 Features(Completed All 3 Stage)
 
 - 💼 **Transaction Management** – add, edit, and delete income/expense transactions with date and description
 - 📊 **Visual Insights** – monthly expense bar chart, category-wise pie chart, and budget vs actual comparisons using **Recharts**
