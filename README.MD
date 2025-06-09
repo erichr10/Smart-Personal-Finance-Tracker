@@ -52,7 +52,7 @@ A full-stack personal finance tracking app designed to help users stay on top of
 
 2. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/Smart Personal Finance Tracker.git
+   git clone https://github.com/<your-username>/Smart-Personal-Finance-Tracker.git
    ```
 3. **Create .env file:**
    In root directories create `.env` and set:
