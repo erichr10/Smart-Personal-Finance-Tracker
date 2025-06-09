@@ -1,0 +1,33 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = []
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  amount      Float
+  description String
+  category    String
+  date        DateTime
+  type        String   // 'income' or 'expense'
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Budget {
+  id       String   @id @default(uuid())
+  category String
+  amount   Float
+  month    String   // Format: YYYY-MM
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([category, month])
+}

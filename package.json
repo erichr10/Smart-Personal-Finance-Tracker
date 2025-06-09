@@ -1,0 +1,13 @@
+{
+  "name": "finsight",
+  "version": "1.0.0",
+  "description": "A full-stack personal finance tracking app designed to help users stay on top of their spending and budgeting — built with **React.js**, **Tailwind CSS**, **shadcn/ui**, **Prisma ORM**, **PostgreSQL**, and **Node js and Express js**.",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm install --prefix Backend && npm install --prefix Frontend && npm run prisma:generate --prefix Backend && npm run build --prefix Frontend",
+    "start": "npm run start --prefix Backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
