@@ -1,4 +1,4 @@
-import { AlertTriangle, TrendingUp, Target, Calendar } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Target, Calendar, Lightbulb } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const SpendingInsights = ({ transactions, budgets }) => {
@@ -116,6 +116,11 @@ const SpendingInsights = ({ transactions, budgets }) => {
 
   return (
     <div className="space-y-4">
+      <div className="flex items-center gap-2 mb-4">
+        <Lightbulb className="h-5 w-5 text-primary" />
+        <h2 className="text-lg font-semibold text-primary">Spending Insights</h2>
+      </div>
+
       {insights.map((insight, index) => {
         const Icon = insight.icon;
         return (
