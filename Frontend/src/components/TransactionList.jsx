@@ -119,7 +119,7 @@ const TransactionList = ({ transactions, onEdit, onDelete }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => onEdit(transaction)}
-                className="h-8 w-8 p-0"
+                className="h-8 w-8 p-0 cursor-pointer"
               >
                 <Edit2 className="h-4 w-4" />
               </Button>
@@ -127,7 +127,7 @@ const TransactionList = ({ transactions, onEdit, onDelete }) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => handleDelete(transaction.id, transaction.description)}
-                className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
+                className="h-8 w-8 p-0 cursor-pointer text-red-600 hover:text-red-700 hover:bg-red-50"
               >
                 <Trash2 className="h-4 w-4" />
               </Button>

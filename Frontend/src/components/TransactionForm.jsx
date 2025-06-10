@@ -55,11 +55,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     const amount = Number(formData.amount);
-    
+
     onSubmit({
       amount: formData.type === 'expense' ? -Math.abs(amount) : Math.abs(amount),
       description: formData.description.trim(),
@@ -78,11 +78,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
   };
 
   return (
-    <div className="fixed inset-0  flex items-center justify-center p-4 z-50">
-      <Card className="w-full max-w-md">
-        <CardHeader>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+      <Card className="w-full max-w-md shadow-xl">
+        <CardHeader className="p-4 border-b">
           <div className="flex items-center justify-between">
-            <CardTitle>
+            <CardTitle className="text-lg font-semibold">
               {transaction ? 'Edit Transaction' : 'Add New Transaction'}
             </CardTitle>
             <Button variant="ghost" size="sm" onClick={onCancel}>
@@ -90,17 +90,18 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
             </Button>
           </div>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+
+        <CardContent className="p-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Transaction Type */}
-            <div>
+            <div className="space-y-1.5">
               <Label>Type</Label>
               <Select
                 value={formData.type}
                 onValueChange={(value) => handleInputChange('type', value)}
               >
                 <SelectTrigger>
-                  <SelectValue />
+                  <SelectValue placeholder="Select type" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="expense">Expense</SelectItem>
@@ -110,7 +111,7 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
             </div>
 
             {/* Amount */}
-            <div>
+            <div className="space-y-1.5">
               <Label htmlFor="amount">Amount ($)</Label>
               <Input
                 id="amount"
@@ -122,11 +123,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
                 onChange={(e) => handleInputChange('amount', e.target.value)}
                 className={errors.amount ? 'border-red-500' : ''}
               />
-              {errors.amount && <p className="text-sm text-red-500 mt-1">{errors.amount}</p>}
+              {errors.amount && <p className="text-sm text-red-500">{errors.amount}</p>}
             </div>
 
             {/* Description */}
-            <div>
+            <div className="space-y-1.5">
               <Label htmlFor="description">Description</Label>
               <Input
                 id="description"
@@ -135,11 +136,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 className={errors.description ? 'border-red-500' : ''}
               />
-              {errors.description && <p className="text-sm text-red-500 mt-1">{errors.description}</p>}
+              {errors.description && <p className="text-sm text-red-500">{errors.description}</p>}
             </div>
 
             {/* Category */}
-            <div>
+            <div className="space-y-1.5">
               <Label>Category</Label>
               <Select
                 value={formData.category}
@@ -156,11 +157,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
                   ))}
                 </SelectContent>
               </Select>
-              {errors.category && <p className="text-sm text-red-500 mt-1">{errors.category}</p>}
+              {errors.category && <p className="text-sm text-red-500">{errors.category}</p>}
             </div>
 
             {/* Date */}
-            <div>
+            <div className="space-y-1.5">
               <Label htmlFor="date">Date</Label>
               <Input
                 id="date"
@@ -169,11 +170,11 @@ const TransactionForm = ({ transaction, onSubmit, onCancel }) => {
                 onChange={(e) => handleInputChange('date', e.target.value)}
                 className={errors.date ? 'border-red-500' : ''}
               />
-              {errors.date && <p className="text-sm text-red-500 mt-1">{errors.date}</p>}
+              {errors.date && <p className="text-sm text-red-500">{errors.date}</p>}
             </div>
 
-            {/* Buttons */}
-            <div className="flex gap-2 pt-4">
+            {/* Action Buttons */}
+            <div className="flex gap-2 pt-2">
               <Button type="button" variant="outline" onClick={onCancel} className="flex-1">
                 Cancel
               </Button>

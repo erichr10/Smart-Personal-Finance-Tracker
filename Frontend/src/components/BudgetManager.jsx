@@ -99,7 +99,7 @@ const BudgetManager = ({ transactions, budgets, onBudgetUpdate }) => {
                 onChange={(e) => setNewBudget(prev => ({ ...prev, month: e.target.value }))}
               />
 
-              <Button type="submit" className="md:col-span-3">
+              <Button type="submit" className="md:col-span-3 cursor-pointer">
                 Set Budget
               </Button>
             </div>

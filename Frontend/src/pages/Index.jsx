@@ -131,10 +131,10 @@ const Index = () => {
 
           <Tabs defaultValue="dashboard" className="w-full">
             <TabsList className="grid w-full grid-cols-4 bg-card/50 backdrop-blur-sm border shadow-lg">
-              <TabsTrigger value="dashboard" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Dashboard</TabsTrigger>
-              <TabsTrigger value="budgets" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Budgets</TabsTrigger>
-              <TabsTrigger value="insights" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Insights</TabsTrigger>
-              <TabsTrigger value="transactions" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Transactions</TabsTrigger>
+              <TabsTrigger value="dashboard" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground cursor-pointer">Dashboard</TabsTrigger>
+              <TabsTrigger value="budgets" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground cursor-pointer">Budgets</TabsTrigger>
+              <TabsTrigger value="insights" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground cursor-pointer">Insights</TabsTrigger>
+              <TabsTrigger value="transactions" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground cursor-pointer">Transactions</TabsTrigger>
             </TabsList>
 
             <TabsContent value="dashboard" className="space-y-6 mt-8">

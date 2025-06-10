@@ -28,8 +28,8 @@ const SpendingInsights = ({ transactions, budgets }) => {
       icon: AlertTriangle,
       title: 'Over Budget Alert',
       description: `You're over budget in ${overBudgetCategories.length} ${overBudgetCategories.length === 1 ? 'category' : 'categories'}: ${overBudgetCategories.map(b => b.category).join(', ')}`,
-      color: 'text-red-600',
-      bgColor: 'bg-red-50',
+      color: 'text-red-600 dark:text-red-400',
+      bgColor: 'bg-red-50 dark:bg-red-900/20',
     });
   }
 
@@ -50,8 +50,8 @@ const SpendingInsights = ({ transactions, budgets }) => {
       icon: TrendingUp,
       title: 'Top Spending Category',
       description: `${topSpendingCategory.category} accounts for $${topSpendingCategory.amount.toFixed(2)} of your expenses this month`,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      color: 'text-blue-600 dark:text-blue-400',
+      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
     });
   }
 
@@ -69,8 +69,8 @@ const SpendingInsights = ({ transactions, budgets }) => {
       icon: Target,
       title: 'Budget Goals on Track',
       description: `You're doing well in ${categoriesOnTrack.length} ${categoriesOnTrack.length === 1 ? 'category' : 'categories'}: ${categoriesOnTrack.map(b => b.category).join(', ')}`,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-green-600 dark:text-green-400',
+      bgColor: 'bg-green-50 dark:bg-green-900/20',
     });
   }
 
@@ -96,8 +96,8 @@ const SpendingInsights = ({ transactions, budgets }) => {
       icon: Calendar,
       title: 'Monthly Spending Trend',
       description: `Your spending is ${Math.abs(percentChange).toFixed(1)}% ${percentChange > 0 ? 'higher' : 'lower'} than last month`,
-      color: percentChange > 10 ? 'text-red-600' : percentChange < -10 ? 'text-green-600' : 'text-blue-600',
-      bgColor: percentChange > 10 ? 'bg-red-50' : percentChange < -10 ? 'bg-green-50' : 'bg-blue-50',
+      color: percentChange > 10 ? 'text-red-600 dark:text-red-400' : percentChange < -10 ? 'text-green-600 dark:text-green-400' : 'text-blue-600 dark:text-blue-400',
+      bgColor: percentChange > 10 ? 'bg-red-50 dark:bg-red-900/20' : percentChange < -10 ? 'bg-green-50 dark:bg-green-900/20' : 'bg-blue-50 dark:bg-blue-900/20',
     });
   }
 
